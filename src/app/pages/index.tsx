@@ -5,7 +5,6 @@ export default function HomePage() {
 
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    console.log('===file', file)
     if (!file) return;
     const text = await file.text();
     const res = await fetch('/api/analyze', {
